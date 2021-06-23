@@ -707,6 +707,10 @@ export default class extends Component {
       button = this.props.nextButton || <Text style={styles.buttonText}>›</Text>
     }
 
+    if (this.state.index === this.state.total - 1 && this.props.lastButton) {
+      button = this.props.lastButton
+    }
+    
     return (
       <TouchableOpacity
         onPress={() => button !== null && this.scrollBy(1)}
@@ -722,6 +726,10 @@ export default class extends Component {
 
     if (this.props.loop || this.state.index !== 0) {
       button = this.props.prevButton || <Text style={styles.buttonText}>‹</Text>
+    }
+    
+     if (this.state.index === 0 && this.props.firstButton) {
+      button = this.props.firstButton
     }
 
     return (
