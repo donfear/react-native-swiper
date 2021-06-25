@@ -728,7 +728,7 @@ export default class extends Component {
       button = this.props.prevButton || <Text style={styles.buttonText}>‹</Text>
     }
     
-     if (this.state.index === 0 && this.props.firstButton) {
+     if ((this.props.firstButtonAlwaysVisible || this.state.index === 0) && this.props.firstButton) {
       button = this.props.firstButton
     }
 
